@@ -1,0 +1,47 @@
+# ==========================================================
+# JumpMapDonation 설정 파일
+# ==========================================================
+
+# 금액 매칭 방식
+#  - EXACT     : 후원 금액이 항목 가격과 "정확히" 일치할 때만 발동
+#  - THRESHOLD : 후원 금액 "이하"인 항목들 중 가장 비싼 항목이 발동
+match-mode: EXACT
+
+# 항목별 가격 (원 단위)
+prices:
+  instant-death: 5000       # 즉사
+  reset: 3000                # 태초 (점프맵 시작 지점으로 리셋)
+  debuff-remove: 500         # 디버프 제거
+  debuffs:
+    health-down: 300         # 체력 1칸 제거
+    bind: 800                 # 구속
+    poison: 400               # 독
+    blindness: 400            # 실명
+    hunger-down: 200          # 배고픔 1칸 제거
+    reverse-controls: 1000    # 조작키 반전
+    knockback: 300            # 밀치기
+
+# 효과별 세부 설정
+settings:
+  bind:
+    duration-seconds: 5
+  poison:
+    duration-seconds: 8
+    amplifier: 1              # 0 = 독 I, 1 = 독 II ...
+  blindness:
+    duration-seconds: 10
+  reverse-controls:
+    duration-seconds: 8
+  knockback:
+    strength: 1.5
+  # '태초' 발동 시 텔레포트할 위치. /jmprice spawn 으로 현재 위치를 저장할 수 있습니다.
+  reset:
+    world: world
+    x: 0.5
+    y: 100.0
+    z: 0.5
+    yaw: 0.0
+    pitch: 0.0
+
+# 방송 메시지 표시 여부
+broadcast-message: true
